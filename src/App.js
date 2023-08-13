@@ -1,7 +1,8 @@
 import "./App.css"
 import { LuckyGrid } from "@lucky-canvas/react"
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import bgm from "./haoyunlai.mp3"
+import { Modal } from "./components"
 
 const blocks = [
   { padding: "10px", background: "#FD9F0C" },
@@ -24,6 +25,8 @@ const prizes = [
   { x: 0, y: 1, fonts: [{ text: "请我喝奶茶", top: "20%" }] },
 ]
 function App() {
+  const [open, setOpen] = useState(false)
+  const [text, setText] = useState("")
   const [buttons] = useState([
     {
       x: 1.5,
@@ -104,7 +107,9 @@ function App() {
           }}
           onEnd={(prize) => {
             // 抽奖结束会触发end回调
-            alert("恭喜你抽到奖品 【" + prize.fonts[0].text + "】")
+            // alert("恭喜你抽到奖品 【" + prize.fonts[0].text + "】")
+            setText(`恭喜你抽到奖品 【${prize.fonts[0].text}】`)
+            setOpen(true)
           }}
           rows={5}
           cols={4}
@@ -115,6 +120,9 @@ function App() {
             background: "#FF9C12",
           }}
         />
+        <Modal open={open} onClose={() => setOpen(false)}>
+          {text}
+        </Modal>
       </div>
     </div>
   )
