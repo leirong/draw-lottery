@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/draw-lottery/static/css/main.b32ecb43.css",
+    "main.css": "/draw-lottery/static/css/main.4458be5c.css",
     "main.js": "/draw-lottery/static/js/main.2ca89dbe.js",
     "static/js/787.b425d5f6.chunk.js": "/draw-lottery/static/js/787.b425d5f6.chunk.js",
     "static/media/haoyunlai.mp3": "/draw-lottery/static/media/haoyunlai.d7c2c01128b616e05c0c.mp3",
     "static/media/p-bg.jpg": "/draw-lottery/static/media/p-bg.fc369cd98f664bc15ee0.jpg",
     "static/media/m-bg.jpg": "/draw-lottery/static/media/m-bg.58198114bd319f7deb72.jpg",
     "index.html": "/draw-lottery/index.html",
-    "main.b32ecb43.css.map": "/draw-lottery/static/css/main.b32ecb43.css.map",
+    "main.4458be5c.css.map": "/draw-lottery/static/css/main.4458be5c.css.map",
     "main.2ca89dbe.js.map": "/draw-lottery/static/js/main.2ca89dbe.js.map",
     "787.b425d5f6.chunk.js.map": "/draw-lottery/static/js/787.b425d5f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b32ecb43.css",
+    "static/css/main.4458be5c.css",
     "static/js/main.2ca89dbe.js"
   ]
 }
