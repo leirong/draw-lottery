@@ -39,18 +39,22 @@
 .lucky-grid-box {
   width: 100vw;
   height: 100vh;
+  background: url("../public/m-bg.jpg") no-repeat center / cover;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   .title {
-    color: red;
+    color: black;
     font-weight: bold;
+    font-size: 3vw;
+    margin-bottom: 3vw;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .lucky-grid-box {
+    background: url("../public/p-bg.jpg") no-repeat center / cover;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -58,8 +62,35 @@
     align-items: center;
     flex-direction: column;
     .title {
-      color: red;
+      color: black;
       font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 30px;
     }
+  }
+}
+
+.bgm {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  animation: swing 3s linear infinite;
+}
+
+.bgm.open {
+  background: url("../public/bgm-btn-1.png") no-repeat center / cover;
+}
+.bgm.close {
+  background: url("../public/bgm-btn-0.png") no-repeat center / cover;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

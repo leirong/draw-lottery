@@ -1,9 +1,11 @@
 import "./App.css"
 import { LuckyGrid } from "@lucky-canvas/react"
 import { useEffect, useRef, useState } from "react"
+import bgm from "./haoyunlai.mp3"
+
 const blocks = [
-  { padding: "10px", background: "#869cfa" },
-  { padding: "10px", background: "#e9e8fe" },
+  { padding: "10px", background: "#FD9F0C" },
+  { padding: "10px", background: "#FFEB8B" },
 ]
 const prizes = [
   { x: 0, y: 0, fonts: [{ text: "请我吃好吃的", top: "20%" }] },
@@ -26,13 +28,14 @@ function App() {
     {
       x: 1.5,
       y: 2,
-      background: "#7f95d1",
+      background: "red",
       fonts: [{ text: "开始", top: "25%" }],
     },
   ])
 
   const [width, setWidth] = useState("100vw")
   const [height, setHeight] = useState("100vw")
+  const [bgmStatus, setBgmStatus] = useState(0)
 
   const myLucky = useRef()
 
@@ -62,9 +65,26 @@ function App() {
     // eslint-disable-next-line
   }, [])
 
+  const audioRef = useRef(null)
+
+  const playAudio = () => {
+    if (bgmStatus) {
+      setBgmStatus(0)
+      audioRef.current.pause()
+      return
+    }
+    setBgmStatus(1)
+    audioRef.current.play()
+  }
+
   return (
     <div className="App">
       <div className="lucky-grid-box">
+        <audio src={bgm} ref={audioRef} />
+        <div
+          className={`bgm ${bgmStatus ? "open" : "close"}`}
+          onClick={playAudio}
+        ></div>
         <div className="title">男朋友犯错后的惩罚</div>
         <LuckyGrid
           ref={myLucky}
@@ -92,7 +112,7 @@ function App() {
             speed: 20,
           }}
           defaultStyle={{
-            background: "#b8c5f2",
+            background: "#FF9C12",
           }}
         />
       </div>
