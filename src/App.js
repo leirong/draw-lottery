@@ -80,7 +80,7 @@ function App() {
   return (
     <div className="App">
       <div className="lucky-grid-box">
-        <audio src={bgm} ref={audioRef} />
+        <audio src={bgm} ref={audioRef} preload="auto" />
         <div
           className={`bgm ${bgmStatus ? "open" : "close"}`}
           onClick={playAudio}
